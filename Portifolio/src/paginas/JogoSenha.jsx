@@ -61,7 +61,7 @@ function JogoSenha() {
 
   return (
     <div className="card">
-      <h2>Jogo Senha</h2>
+      <h2>Jogo Senha <br />(Bulls and Cows)</h2>
 
       {!jogoAtivo && (
         <button onClick={iniciarJogo}>Iniciar Jogo</button>
@@ -74,7 +74,7 @@ function JogoSenha() {
             maxLength={4}
             value={tentativa}
             onChange={(e) => setTentativa(e.target.value.replace(/\D/g, ''))}
-            placeholder="Digite 4 números"
+            placeholder="Digite 4 números diferentes"
           />
           <br />
           <button onClick={handleTentar}>Tentar</button>
@@ -84,7 +84,7 @@ function JogoSenha() {
           <ul>
             {historico.map((item, index) => (
               <li key={index}>
-                {item.tentativa} - {item.acertos} certos, {item.semiAcertos} parcialmente
+                {item.tentativa} - {item.acertos} Bulls, {item.semiAcertos} Cows
               </li>
             ))}
           </ul>
